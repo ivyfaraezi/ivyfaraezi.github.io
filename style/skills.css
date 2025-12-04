@@ -1,0 +1,275 @@
+.skills-section {
+  margin: 2rem auto;
+  max-width: 1400px;
+  min-height: calc(100vh - 200px);
+  padding: 2rem;
+}
+
+.skills-title {
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: fadeInDown 0.6s ease;
+  background: linear-gradient(135deg, #4e47ff 0%, #8b5cf6 50%, #ec4899 100%);
+  background-clip: text;
+  font-size: 3.5rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.skills-container {
+  animation: fadeInUp 0.8s ease;
+  display: grid;
+  gap: 2.5rem;
+  grid-template-columns: repeat(2, 1fr);
+  margin-top: 3rem;
+}
+
+.skill-category {
+  animation: skillFadeIn 0.6s ease backwards;
+  backdrop-filter: blur(20px);
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.98),
+    rgba(255, 255, 255, 0.92)
+  );
+  border: 1px solid rgba(78, 71, 255, 0.15);
+  border-radius: 28px;
+  box-shadow: 0 10px 40px rgba(78, 71, 255, 0.08),
+    0 4px 12px rgba(0, 0, 0, 0.05), inset 0 1px 0 rgba(255, 255, 255, 0.8);
+  overflow: hidden;
+  padding: 3rem 2.5rem;
+  position: relative;
+  text-align: center;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes skillFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.skill-category:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.skill-category:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.skill-category:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.skill-category:nth-child(4) {
+  animation-delay: 0.4s;
+}
+
+.skill-category::before {
+  background: linear-gradient(90deg, #4e47ff, #8b5cf6, #ec4899);
+  content: "";
+  height: 4px;
+  left: 0;
+  opacity: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: opacity 0.4s ease;
+}
+
+.skill-category:hover::before {
+  opacity: 1;
+}
+
+.skill-category:hover {
+  border-color: rgba(78, 71, 255, 0.2);
+  box-shadow: 0 20px 60px rgba(78, 71, 255, 0.15),
+    0 8px 24px rgba(0, 0, 0, 0.08), inset 0 1px 0 rgba(255, 255, 255, 1);
+  transform: translateY(-8px) scale(1.02);
+}
+
+.category-title {
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background: linear-gradient(135deg, #4e47ff 0%, #8b5cf6 70%);
+  background-clip: text;
+  font-size: 1.4rem;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  margin-bottom: 1.8rem;
+  position: relative;
+}
+
+.category-title::after {
+  background: linear-gradient(90deg, #4e47ff, #8b5cf6);
+  border-radius: 2px;
+  bottom: -8px;
+  content: "";
+  height: 3px;
+  left: 50%;
+  position: absolute;
+  transform: translateX(-50%);
+  width: 40px;
+}
+
+.skill-icons {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+}
+
+.skill-icons a {
+  display: inline-block;
+  line-height: 0;
+  position: relative;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.skill-icons a::after {
+  background: radial-gradient(circle, rgba(78, 71, 255, 0.2), transparent);
+  border-radius: 50%;
+  content: "";
+  height: 100%;
+  left: 0;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  transition: opacity 0.3s ease;
+  width: 100%;
+}
+
+.skill-icons a:hover {
+  filter: brightness(1.1) drop-shadow(0 6px 16px rgba(78, 71, 255, 0.4));
+  transform: translateY(-8px) scale(1.15) rotate(5deg);
+}
+
+.skill-icons a:hover::after {
+  opacity: 1;
+}
+
+.skill-icons img {
+  display: block;
+  height: 48px;
+  width: 48px;
+}
+
+.skill-category img {
+  display: block;
+  filter: brightness(1) contrast(1);
+  height: auto;
+  margin: 0 auto;
+  max-width: 100%;
+  transition: transform 0.4s ease, filter 0.4s ease;
+}
+
+.skill-category:hover img {
+  filter: none;
+  transform: none;
+}
+
+/* Add subtle grid pattern background */
+.skills-section::before {
+  background-image: linear-gradient(
+      rgba(78, 71, 255, 0.02) 1px,
+      transparent 1px
+    ),
+    linear-gradient(90deg, rgba(78, 71, 255, 0.02) 1px, transparent 1px);
+  background-size: 50px 50px;
+  bottom: 0;
+  content: "";
+  left: 0;
+  pointer-events: none;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: -1;
+}
+
+@media screen and (max-width: 768px) {
+  .skills-section {
+    margin: 1.5rem auto;
+    padding: 1rem;
+  }
+
+  .skills-title {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .skills-container {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+
+  .skill-category {
+    padding: 2rem 1.5rem;
+    border-radius: 20px;
+  }
+
+  .category-title {
+    font-size: 1.3rem;
+    margin-bottom: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .skills-title {
+    font-size: 2rem;
+  }
+
+  .skills-container {
+    gap: 1.2rem;
+    margin-top: 1.5rem;
+  }
+
+  .skill-category {
+    padding: 1.5rem 1.2rem;
+    border-radius: 18px;
+  }
+
+  .category-title {
+    font-size: 1.2rem;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .skills-title {
+    font-size: 1.75rem;
+  }
+
+  .skill-category {
+    padding: 1.2rem 1rem;
+  }
+
+  .category-title {
+    font-size: 1.1rem;
+  }
+}
